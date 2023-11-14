@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    font-family: var(--font-poppins);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: normal;
+    box-sizing: border-box;
+    
+
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+:root {
+    /* fonts */
+    --font-poppins: 'Poppins', sans-serif;
+
+    /* Colors */
+    --color-white: #fff;
+    --color-darkred: #8c0606;
+    --color-gainsboro-100: #ede0e0;
+    --color-gainsboro-200: #d9d9d9;
+    /* --primary-color: rgb(193, 239, 212);
+    --secondary-color: rgb(127, 225, 168); */
+    --primary-color: #03f896;
+    --secondary-color: rgb(230, 230, 230);
+
+    /* border radiuses */
+    --br-8xs: 5px;
+    --br-xl: 20px;
+}
+
+/* nav{
+    height: 4.5em;
+    font-size: large;
+}
+.btn{
+    background-color: var(--primary-color);
+}
+.nav-img{
+    height: 3em;
+} */
+
+.bg{
+    background: url('../img/bg.png') center;
+    background-size: cover;
+    height: 500px;
+    /* background-attachment: fixed ; */
+    /* backdrop-filter: blur(10px); */
+   
+}
+
+.boxed1 {
+    height: 35px;
+}
+
+.boxed1 label {
+    display: inline-block;
+    width: 45px;
+    height: fit-content;
+    padding: 1px;
+    border: solid 1px #ccc;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+
+.boxed1 label:hover {
+    border: none;
+    border: solid 1px #ffffff;
+    /* background-color: rgb(0, 0, 0); */
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .5);
+}
+
+
+.boxed1 input[type="radio"] {
+    display: none;
+}
+
+.boxed1 input[type="radio"]:checked+label {
+    border: solid 1px Black;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .5);
+}
+
+.log{
+    height: 23px;
+}
+/* label , strong{
+font-family: monospace;
+font-size: 20px;
+font-weight: 400;
+} */

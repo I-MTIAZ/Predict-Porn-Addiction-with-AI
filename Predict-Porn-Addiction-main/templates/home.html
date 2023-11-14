@@ -1,0 +1,316 @@
+{% extends 'base.html' %}
+
+{% block title %}Registration | AI{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+            <div class="">
+                <form id="predict-form" method="POST">
+                    <fieldset>
+                        <h1 class="text-center font-monospace">Predict Porn Addiction</h1>
+                        <hr>
+                        <!-- Excessive -->
+                        <div class="mb-3">
+                            <label for="excessive" class="form-label"><strong>1. Is your consumption of pornography
+                                    becoming excessive? </strong></label>
+                            <div name="excessive" class="boxed1 " required>
+                                <input type="radio" id="Yes" name="excessive" value="1" required>
+                                <label for="Yes" value="1">Yes</label>
+                                <input type="radio" id="No" name="excessive"
+                                    value="0" required>
+                                <label for="No" value="0">No</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="quit_unsuccessful" class="form-label"><strong>2. Have you experienced the
+                                    inability to stop, or have your efforts to quit been unsuccessful?
+                                </strong></label>
+                                <div name="quit_unsuccessful" class="boxed1 " required>
+                                    <input type="radio" id="Yes1" name="quit_unsuccessful" value="1" required>
+                                    <label for="Yes1" value="1">Yes</label>
+                                    <input type="radio" id="No1" name="quit_unsuccessful"
+                                        value="0" required>
+                                    <label for="No1" value="0">No</label>
+                                </div>
+                        </div>
+                        <!-- Quit Unsuccessful -->
+                        <div class="mb-3">
+                            <label for="loss_focus" class="form-label"><strong>
+                                    3. Are you experiencing a loss of focus at work?
+                                </strong></label>
+                                <div name="loss_focus" class="boxed1 " required>
+                                    <input type="radio" id="Yes2" name="loss_focus" value="1" required>
+                                    <label for="Yes2" value="1">Yes</label>
+                                    <input type="radio" id="No2" name="loss_focus"
+                                        value="0" required>
+                                    <label for="No2" value="0">No</label>
+                                </div>
+                        </div>
+
+                        <!-- Repeat the pattern for other input parameters -->
+
+                        <!-- Reduction -->
+                        <div class="mb-3">
+                            <label for="reduction" class="form-label"><strong>
+                                    4. Have you noticed a reduction in sexual satisfaction?
+                                </strong></label>
+                                <div name="reduction" class="boxed1 " required>
+                                    <input type="radio" id="Yes3" name="reduction" value="1" required>
+                                    <label for="Yes3" value="1">Yes</label>
+                                    <input type="radio" id="No3" name="reduction"
+                                        value="0" required>
+                                    <label for="No3" value="0">No</label>
+                                </div>
+                        </div>
+
+                        <!-- Engaging Risky -->
+                        <div class="mb-3">
+                            <label for="engaging_risky" class="form-label"><strong>5. Are you engaging in risky
+                                    behaviors?</strong>
+                            </label>
+                            <div name="engaging_risky" class="boxed1 " required>
+                                <input type="radio" id="Yes4" name="engaging_risky" value="1" required>
+                                <label for="Yes4" value="1">Yes</label>
+                                <input type="radio" id="No4" name="engaging_risky"
+                                    value="0" required>
+                                <label for="No4" value="0">No</label>
+                            </div>
+                        </div>
+
+                        <!-- Guilt Shame -->
+                        <div class="mb-3">
+                            <label for="guilt_shame" class="form-label"><strong>6. Are you experiencing feelings of
+                                    guilt and shame?
+                                </strong></label>
+                                <div name="guilt_shame" class="boxed1 " required>
+                                    <input type="radio" id="Yes5" name="guilt_shame" value="1" required>
+                                    <label for="Yes5" value="1">Yes</label>
+                                    <input type="radio" id="No5" name="guilt_shame"
+                                        value="0" required>
+                                    <label for="No5" value="0">No</label>
+                                </div>
+                        </div>
+
+                        <!-- Cycles -->
+                        <div class="mb-3">
+                            <label for="cycles" class="form-label"><strong>7. Are you going through repeated cycles of
+                                    stopping and restarting?
+                                </strong></label>
+                                <div name="cycles" class="boxed1 " required>
+                                    <input type="radio" id="Yes6" name="cycles" value="1" required>
+                                    <label for="Yes6" value="1">Yes</label>
+                                    <input type="radio" id="No6" name="cycles"
+                                        value="0" required>
+                                    <label for="No6" value="0">No</label>
+                                </div>
+                        </div>
+
+                        <!-- Health Issue -->
+                        <div class="mb-3">
+                            <label for="health_issue" class="form-label"><strong>8. Are you struggling with mental
+                                    health issues, such as anxiety, depression, or suicidal thoughts?
+                                </strong></label>
+                                <div name="health_issue" class="boxed1 " required>
+                                    <input type="radio" id="Yes7" name="health_issue" value="1" required>
+                                    <label for="Yes7" value="1">Yes</label>
+                                    <input type="radio" id="No7" name="health_issue"
+                                        value="0" required>
+                                    <label for="No7" value="0">No</label>
+                                </div>
+                        </div>
+
+                        <!-- Demanding -->
+                        <div class="mb-3">
+                            <label for="demanding" class="form-label"><strong>9. Are you becoming more demanding?
+                                </strong></label>
+                                <div name="demanding" class="boxed1 " required>
+                                    <input type="radio" id="Yes8" name="demanding" value="1" required>
+                                    <label for="Yes8" value="1">Yes</label>
+                                    <input type="radio" id="No8" name="demanding"
+                                        value="0" required>
+                                    <label for="No8" value="0">No</label>
+                                </div>
+                        </div>
+
+                        <!-- Lost Attraction -->
+                        <div class="mb-3">
+                            <label for="lost_attraction" class="form-label"><strong>10. Have you lost attraction?
+                                </strong></label>
+                                <div name="lost_attraction" class="boxed1 " required>
+                                    <input type="radio" id="Yes9" name="lost_attraction" value="1" required>
+                                    <label for="Yes9" value="1">Yes</label>
+                                    <input type="radio" id="No9" name="lost_attraction"
+                                        value="0" required>
+                                    <label for="No9" value="0">No</label>
+                                </div>
+                        </div>
+
+                        <!-- Physical Pain -->
+                        <div class="mb-3">
+                            <label for="physical_pain" class="form-label"><strong>11. Are you experiencing physical
+                                    pain?
+                                </strong></label>
+                                <div name="physical_pain" class="boxed1 " required>
+                                    <input type="radio" id="Yes11" name="physical_pain" value="1" required>
+                                    <label for="Yes11" value="1">Yes</label>
+                                    <input type="radio" id="No11" name="physical_pain"
+                                        value="0" required>
+                                    <label for="No11" value="0">No</label>
+                                </div>
+                        </div>
+
+                        <!-- Feeling Distracted -->
+                        <div class="mb-3">
+                            <label for="feeling_distracted" class="form-label"><strong>12. Are you feeling distracted?
+                                </strong></label>
+                                <div name="feeling_distracted" class="boxed1 " required>
+                                    <input type="radio" id="Yes22" name="feeling_distracted" value="1" required>
+                                    <label for="Yes22" value="1">Yes</label>
+                                    <input type="radio" id="No22" name="feeling_distracted"
+                                        value="0" required>
+                                    <label for="No22" value="0">No</label>
+                                </div>
+                        </div>
+
+                        <!-- A U Issue R -->
+                        <div class="mb-3">
+                            <label for="a_u_issue_r" class="form-label"><strong>13. Are you becoming angry or upset when
+                                    the issue is raised?
+                                </strong></label>
+                                <div name="a_u_issue_r" class="boxed1 " required>
+                                    <input type="radio" id="Yes33" name="a_u_issue_r" value="1" required>
+                                    <label for="Yes33" value="1">Yes</label>
+                                    <input type="radio" id="No33" name="a_u_issue_r"
+                                        value="0" required>
+                                    <label for="No33" value="0">No</label>
+                                </div>
+                        </div>
+
+                        <!-- Cope Feelings -->
+                        <div class="mb-3">
+                            <label for="cope_feelings" class="form-label"><strong>14. Are you using pornography as a way
+                                    to cope with feelings of sadness, anxiety, insomnia, or other mental health issues?
+                                </strong></label>
+                                <div name="cope_feelings" class="boxed1 " required>
+                                    <input type="radio" id="Yes44" name="cope_feelings" value="1" required>
+                                    <label for="Yes44" value="1">Yes</label>
+                                    <input type="radio" id="No44" name="cope_feelings"
+                                        value="0" required>
+                                    <label for="No44" value="0">No</label>
+                                </div>
+                        </div>
+
+                        <!-- Sex Life Less Satisfying -->
+                        <div class="mb-3">
+                            <label for="sex_life_less_satisfying" class="form-label"><strong>15. Is your sex life
+                                    becoming less satisfying?
+                                </strong></label>
+                                <div name="sex_life_less_satisfying" class="boxed1 " required>
+                                    <input type="radio" id="Yes55" name="sex_life_less_satisfying" value="1" required>
+                                    <label for="Yes55" value="1">Yes</label>
+                                    <input type="radio" id="No55" name="sex_life_less_satisfying"
+                                        value="0" required>
+                                    <label for="No55" value="0">No</label>
+                                </div>
+                        </div>
+
+                        <!-- Lost Interest -->
+                        <div class="mb-3">
+                            <label for="lost_interest" class="form-label"><strong>16. Have you lost interest in things
+                                    you once enjoyed?
+                                </strong></label>
+                                <div name="lost_interest" class="boxed1 " required>
+                                    <input type="radio" id="Yes66" name="lost_interest" value="1" required>
+                                    <label for="Yes66" value="1">Yes</label>
+                                    <input type="radio" id="No66" name="lost_interest"
+                                        value="0" required>
+                                    <label for="No66" value="0">No</label>
+                                </div>
+                        </div>
+
+                        <!-- Obsessive Thoughts -->
+                        <div class="mb-3">
+                            <label for="obsessive_thoughts" class="form-label"><strong>17. Are you experiencing cravings
+                                    and obsessive thoughts?
+                                </strong></label>
+                                <div name="obsessive_thoughts" class="boxed1 " required>
+                                    <input type="radio" id="Yes77" name="obsessive_thoughts" value="1" required>
+                                    <label for="Yes77" value="1">Yes</label>
+                                    <input type="radio" id="No77" name="obsessive_thoughts"
+                                        value="0" required>
+                                    <label for="No77" value="0">No</label>
+                                </div>
+                        </div>
+
+                        <!-- Feeling Withdrawal -->
+                        <div class="mb-3">
+                            <label for="feeling_withdrawal" class="form-label"><strong>18. Feeling withdrawal when not
+                                    watching porn?
+
+                                </strong></label>
+                                <div name="feeling_withdrawal" class="boxed1 " required>
+                                    <input type="radio" id="Yes88" name="feeling_withdrawal" value="1" required>
+                                    <label for="Yes88" value="1">Yes</label>
+                                    <input type="radio" id="No88" name="feeling_withdrawal"
+                                        value="0" required>
+                                    <label for="No88" value="0">No</label>
+                                </div>
+                        </div>
+
+                        <!-- Result -->
+                        <div class="m-3">
+                            <h4 class="" id="prediction-result">{{ result }}</h4><br>
+                        </div>
+
+                        <div class="mb-3 w-100 text-center">
+                            <input type="submit" value="Predict" class="btn btn-outline-dark w-50">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#predict-form").submit(function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                type: "POST",
+                url: "/predict",
+                data: $(this).serialize(),
+                success: function (response) {
+                    if (response.error_message) {
+                        alert('Prediction failed: ' + response.error_message);
+                    } else {
+                        // Update the page with the prediction result
+
+                        // alert('Prediction Successfull: ' + response.result);
+                        if (response.result == "addicted") {
+                            $("#prediction-result").removeClass('bg-success text-white text-center p-3 form-control shadow')
+                            $("#prediction-result").addClass('bg-danger text-white text-center p-3 form-control shadow')
+                            $("#prediction-result").text("According to your given data I predict you are ADDICTED to Pornography.");
+
+                        }
+                        else {
+                            $("#prediction-result").removeClass('bg-danger text-white text-center p-3 form-control shadow')
+                            $("#prediction-result").addClass('bg-success text-white text-center p-3 form-control shadow')
+                            $("#prediction-result").text("According to your given data I predict you are NOT ADDICTED to Pornography.");
+                        }
+
+
+                    }
+                },
+                error: function () {
+                    alert('Error occurred during prediction.');
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

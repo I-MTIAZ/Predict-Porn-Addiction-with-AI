@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Login | AI{% endblock %}
+
+{% block content %}
+<div class="container-lg my-5">
+    <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+            <div class="form-control shadow p-5">
+                <h2>Login</h2>
+                <hr>
+                <form class="container-sm" method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    {{ form.username }}
+                    <br>
+                    {{ form.password }}
+                    <br>
+                    {{ form.submit }}
+                </form>
+                <br>
+                <a href="{{ url_for('register') }}">Don't have an account? Sign Up</a>
+            </div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
